@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,lib}/**/*", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency 'rails', '~> 5.0.0', '>= 5.0.0'
-
-  s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4', '>= 0.4.0'
+  s.add_dependency 'rails', '~> 5.2.1'
+  s.add_development_dependency 'simplecov', '~> 0.16.1'
 end

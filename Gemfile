@@ -13,5 +13,3 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-# Added at 2018-07-08 16:08:37 -0400 by Jack:
-gem "rails", "~> 5.0.0"

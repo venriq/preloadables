@@ -44,7 +44,7 @@ module Preloadables
           tag(:link, rel: type, href: link)
         }
 
-        markup.join()
+        markup.join
       end
 
   end

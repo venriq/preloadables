@@ -19,18 +19,9 @@ class AllPreloadablesTest < ActionView::TestCase
 
   test 'it renders all prefetching/preloading meta' do
     preloadable_options = {
-      domains: [
-        'google.com',
-        'jack.ofspades.com'
-      ],
-      assets: [
-        'http://jack.ofspades.com/assets/js/application.js',
-        '/foo/bar/baz.min.css'
-      ],
-      pages: [
-        '/page2.html',
-        'https://jack.ofspades.com/contact/'
-      ]
+      domains: %w(google.com jack.ofspades.com),
+      assets:  %w(http://jack.ofspades.com/assets/js/application.js /foo/bar/baz.min.css),
+      pages:   %w(/page2.html https://jack.ofspades.com/contact/)
     }
 
     expected_output = '<link rel="dns-prefetch" href="google.com" /><link rel="dns-prefetch" href="jack.ofspades.com" />'
@@ -52,10 +43,7 @@ class PreloadableDomainsTest < ActionView::TestCase
   end
 
   test 'it renders dns prefetching meta' do
-    preloadable_options = [
-      'google.com',
-      'jack.ofspades.com'
-    ]
+    preloadable_options = %w(google.com jack.ofspades.com)
 
     expected_output = '<link rel="dns-prefetch" href="google.com" /><link rel="dns-prefetch" href="jack.ofspades.com" />'
 
@@ -74,10 +62,7 @@ class PreloadableAssetsTest < ActionView::TestCase
   end
 
   test 'it renders asset preloading meta' do
-    preloadable_options = [
-      'http://jack.ofspades.com/assets/js/application.js',
-      '/foo/bar/baz.min.css'
-    ]
+    preloadable_options = %w(http://jack.ofspades.com/assets/js/application.js /foo/bar/baz.min.css)
 
     expected_output = '<link rel="prefetch" href="http://jack.ofspades.com/assets/js/application.js" /><link rel="prefetch" href="/foo/bar/baz.min.css" />'
 
@@ -96,10 +81,7 @@ class PrerenderablePagesTest < ActionView::TestCase
   end
 
   test 'it renders dns prefetching meta' do
-    preloadable_options = [
-      '/page2.html',
-      'https://jack.ofspades.com/contact/'
-    ]
+    preloadable_options = %w(/page2.html https://jack.ofspades.com/contact/)
 
     expected_output = '<link rel="prerender" href="/page2.html" /><link rel="prerender" href="https://jack.ofspades.com/contact/" />'
 
